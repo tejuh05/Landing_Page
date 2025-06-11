@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Micro Information Technology Services (MITS)</title>
+  
+  <!-- Google Fonts: Poppins for headings, Inter for body -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@600;700;900&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Material Symbols Rounded Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet" />
+  
+  <style>
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+    /* Font families */
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color: #d1d5db; /* Tailwind gray-300 */
+      background: linear-gradient(135deg, #0f172a, #1e293b, #0f172a);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #eef2ff; /* Tailwind indigo-100 */
+      text-shadow: 0 0 4px rgba(147, 197, 253, 0.6); /* subtle blue glow */
+    }
+
+    /* Headings font weights */
+    h1 {
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    /* Links color and hover */
+    a {
+      color: #818cf8; /* Tailwind indigo-400 */
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #6366f1; /* Tailwind indigo-500 */
+      outline: none;
+    }
+
+    /* Button text and background adjustments */
+    button {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+    }
+
+    /* Custom focus styles for accessibility */
+    a:focus, button:focus, input:focus, textarea:focus {
+      outline: 3px solid #7c3aed; /* Tailwind purple-600 */
+      outline-offset: 3px;
+      outline-style: solid;
+      outline-opacity: 1;
+    }
+
+    /* Smooth hover transitions */
+    .transition-smooth {
+      transition: all 0.3s ease;
+    }
+
+    /* Animate fade-in on scroll */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.9s forwards;
+    }
+    .fade-in.delayed {
+      animation-delay: 0.3s;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Scroll behavior smooth for entire document */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Hero arrow animation */
+    .bounce {
+      animation: bounce 2.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(8px);
+      }
+      60% {
+        transform: translateY(4px);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-gradient-to-r from-gray-900 to-gray-800 shadow-lg z-50">
+    <div class="max-w-[1200px] mx-auto flex items-center justify-between px-6 py-4">
+      <a href="#" class="text-3xl font-extrabold text-indigo-400 select-none" aria-label="Micro Information Technology Services Home" style="text-shadow: 0 0 6px #6366f1;">MITS</a>
+      <nav class="space-x-8 hidden md:flex" aria-label="Primary navigation">
+        <a href="#hero" class="text-indigo-300 hover:text-indigo-400 transition-smooth font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Home</a>
+        <a href="#universities" class="text-indigo-300 hover:text-indigo-400 transition-smooth font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Universities</a>
+        <a href="#social-stats" class="text-indigo-300 hover:text-indigo-400 transition-smooth font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Social</a>
+        <a href="#contact" class="text-indigo-300 hover:text-indigo-400 transition-smooth font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Contact</a>
+      </nav>
+      <button aria-label="Toggle menu" aria-expanded="false" class="md:hidden text-indigo-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-purple-600 rounded" id="mobile-menu-button" aria-controls="mobile-menu">
+        <span class="material-symbols-rounded text-3xl select-none">menu</span>
+      </button>
+    </div>
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden px-6 pb-4 md:hidden bg-gradient-to-r from-gray-900 to-gray-800" aria-label="Mobile navigation">
+      <a href="#hero" class="block py-3 text-indigo-300 hover:text-indigo-400 font-medium border-b border-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Home</a>
+      <a href="#universities" class="block py-3 text-indigo-300 hover:text-indigo-400 font-medium border-b border-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Universities</a>
+      <a href="#social-stats" class="block py-3 text-indigo-300 hover:text-indigo-400 font-medium border-b border-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Social</a>
+      <a href="#contact" class="block py-3 text-indigo-300 hover:text-indigo-400 font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-500">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-[1200px] mx-auto px-4 flex-grow" role="main">
+    <!-- Hero Section -->
+    <section id="hero" class="pt-28 pb-32 text-center relative" >
+      <h1 class="text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight fade-in" style="color:#e0e7ff;">Welcome to Micro Information Technology Services (MITS)</h1>
+      <p class="mt-6 text-lg max-w-3xl mx-auto text-indigo-200 fade-in delayed" style="text-shadow: 0 0 10px rgba(129,140,248,0.6);">
+        Empowering students and professionals through cutting-edge IT services, innovation, and collaborative learning.
+        Our mission is to bridge technology and education to build a future-ready workforce.
+      </p>
+      <button 
+        class="mt-12 bg-gradient-to-r from-purple-700 via-indigo-600 to-cyan-600 text-white rounded-xl px-8 py-4 text-xl font-semibold hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-indigo-500 transition-smooth drop-shadow-lg fade-in delayed" 
+        aria-label="Get Started with MITS" style="text-shadow: 0 1px 6px rgba(0,0,0,0.7);">
+        Get Started
+      </button>
+      <!-- Scroll Down Arrow -->
+      <a href="#universities" aria-label="Scroll down to Universities section" class="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-indigo-400 text-6xl animate-bounce hover:scale-110 transition-transform" role="button" tabindex="0">
+        <span class="material-symbols-rounded">expand_more</span>
+      </a>
+    </section>
+
+    <!-- Universities Affiliations -->
+    <section id="universities" class="pt-16 pb-24" tabindex="-1" aria-labelledby="uni-title" >
+      <h2 id="uni-title" class="text-4xl font-extrabold mb-12 text-center fade-in" style="color:#a5b4fc; text-shadow: 0 0 10px rgba(147,197,253,0.4);">Our Student Affiliations</h2>
+      <p class="text-center max-w-2xl mx-auto mb-12 text-indigo-300 fade-in delayed" style="text-shadow: 0 0 6px rgba(147,197,253,0.35);">
+        Proudly collaborating with students from top universities worldwide.
+      </p>
+      <br>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-12 justify-items-center items-center" role="list" aria-label="University logos">
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/1a93357a-1932-467f-a6af-451baba25c7a.png" alt="Harvard University shield logo in crimson and white" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/fa4ac70b-3c05-4303-803c-6981bfc16ecf.png" alt="Massachusetts Institute of Technology logo with red and gray colors" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e38892a0-2c77-4be3-ba97-ebb489198541.png" alt="Stanford University logo with a red tree emblem" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/976ae625-aa0c-44c2-b1a9-040bff21f0a7.png" alt="University of Oxford logo in blue and white with crest" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cedc768f-f343-479f-b056-e75c289a752d.png" alt="University of Cambridge colorful crest logo" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cafc1d37-bc79-4cb2-b175-912d493b0378.png" alt="California Institute of Technology logo with orange and black" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/308a71ab-ef44-4f58-9af1-78a01d38bf9f.png" alt="University of California Berkeley logo with blue and gold" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/27b6721a-7684-46c1-b190-7dec5865ed9e.png" alt="Imperial College London logo with black and gold" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/921d67fe-7ea5-40eb-81fe-40753bceac9d.png" alt="ETH Zurich Swiss Federal Institute of Technology logo with red and black" class="max-h-20 max-w-full object-contain" />
+        </div>
+        <div class="w-32 h-32 flex items-center justify-center bg-gradient-to-tr from-gray-800 to-gray-700 rounded-3xl shadow-lg p-5 hover:scale-105 transition-transform cursor-pointer" style="box-shadow: 0 15px 30px rgba(131, 147, 255, 0.5);">
+          <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee1e50e2-c1e6-4305-a014-f20f1a937b72.png" alt="University of Tokyo red circle logo with Japanese characters" class="max-h-20 max-w-full object-contain" />
+        </div>
+      </div>
+      <br>
+    </section>
+        
+    <!-- Social Media Statistics and Testimonials -->
+    <section id="social-stats" class=" pt-16 pb-24" tabindex="-1" aria-labelledby="social-title testimonials-title" >
+      <div>
+      <h2 id="social-title" class="text-4xl font-extrabold mb-12 text-center fade-in" style="color:#a5b4fc; text-shadow: 0 0 10px rgba(147,197,253,0.4);">Our Social Media Reach &amp; Testimonials</h2>
+      <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-12 mb-16">
+        <div class="bg-gradient-to-tr from-purple-700 via-indigo-700 to-blue-700 rounded-xl shadow-lg flex items-center gap-6 p-8 text-white hover:brightness-110 transition-smooth" style="text-shadow: 0 0 6px rgba(0,0,0,0.6);">
+          <span class="material-symbols-rounded text-6xl select-none" aria-hidden="true">group</span>
+          <div>
+            <p class="text-5xl font-extrabold" aria-label="Followers count">85,000+</p>
+            <p class="text-lg mt-1 font-semibold">Followers Across Platforms</p>
+          </div>
+        </div>
+        <div class="bg-gradient-to-tr from-green-700 via-emerald-700 to-teal-700 rounded-xl shadow-lg flex items-center gap-6 p-8 text-white hover:brightness-110 transition-smooth" style="text-shadow: 0 0 6px rgba(0,0,0,0.6);">
+          <span class="material-symbols-rounded text-6xl select-none" aria-hidden="true">network_wifi</span>
+          <div>
+            <p class="text-5xl font-extrabold" aria-label="Network size">12,000+</p>
+            <p class="text-lg mt-1 font-semibold">Active Network Members</p>
+          </div>
+        </div>
+      </div>
+      </div>  
+    </section>
+
+      <!-- User Testimonials & Reviews Cards inside social section -->
+      <div class="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3" aria-label="User testimonials and reviews">
+        <div class="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl p-6 text-gray-100 shadow-xl hover:shadow-indigo-500 transition-shadow cursor-default fade-in" aria-label="Testimonial from Alex Johnson">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-rounded text-indigo-400 text-3xl" aria-hidden="true">chat</span>
+            <h3 class="text-xl font-semibold text-indigo-300">Alex Johnson</h3>
+          </div>
+          <p class="text-lg italic leading-relaxed">"MITS provided me with exceptional resources and a supportive community that boosted my career development beyond expectations."</p>
+        </div>
+        <div class="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl p-6 text-gray-100 shadow-xl hover:shadow-indigo-500 transition-shadow cursor-default fade-in delayed" aria-label="Testimonial from Priya Patel" style="animation-delay: 0.3s;">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-rounded text-indigo-400 text-3xl" aria-hidden="true">star</span>
+            <h3 class="text-xl font-semibold text-indigo-300">Priya Patel</h3>
+          </div>
+          <p class="text-lg italic leading-relaxed">"The collaborative projects and learning environment fostered by MITS opened up new opportunities and skills for me."</p>
+        </div>
+        <div class="bg-gradient-to-br from-gray-800 via-gray-700 to-gray-800 rounded-xl p-6 text-gray-100 shadow-xl hover:shadow-indigo-500 transition-shadow cursor-default fade-in delayed" aria-label="Testimonial from Marcus Lee" style="animation-delay: 0.6s;">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="material-symbols-rounded text-indigo-400 text-3xl" aria-hidden="true">verified_user</span>
+            <h3 class="text-xl font-semibold text-indigo-300">Marcus Lee</h3>
+          </div>
+          <p class="text-lg italic leading-relaxed">"Thanks to MITS, I built a strong network and gained hands-on experience that landed me my dream job."</p>
+        </div>
+      </div>
+      <br>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="pt-16 pb-20" tabindex="-1" aria-labelledby="contact-title">
+      <h2 id="contact-title" class="text-4xl font-extrabold mb-12 text-center fade-in" style="color:#a5b4fc; text-shadow: 0 0 10px rgba(147,197,253,0.4);">Contact Us</h2>
+      <form action="#" method="POST" class="max-w-3xl mx-auto bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 rounded-xl p-10 shadow-xl fade-in delayed" novalidate>
+        <div class="grid gap-8 md:grid-cols-2">
+          <div>
+            <label for="name" class="block text-indigo-300 font-semibold mb-2">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your full name" required aria-required="true" class="w-full rounded-md bg-gray-900 border border-indigo-700 px-4 py-3 text-indigo-200 placeholder-indigo-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-smooth" />
+          </div>
+          <div>
+            <label for="email" class="block text-indigo-300 font-semibold mb-2">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required aria-required="true" class="w-full rounded-md bg-gray-900 border border-indigo-700 px-4 py-3 text-indigo-200 placeholder-indigo-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-smooth" />
+          </div>
+        </div>
+        <div class="mt-8">
+          <label for="message" class="block text-indigo-300 font-semibold mb-2">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your message here..." required aria-required="true" class="w-full rounded-md bg-gray-900 border border-indigo-700 px-4 py-3 text-indigo-200 placeholder-indigo-500 focus:border-purple-500 focus:ring-2 focus:ring-purple-500 focus:outline-none transition-smooth"></textarea>
+        </div>
+        <div class="mt-10 text-center">
+          <button type="submit" class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white rounded-full px-14 py-4 text-lg font-semibold hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-purple-500 transition-smooth" aria-label="Send Contact Message" style="text-shadow: 0 0 15px rgba(251,191,36,0.7);">
+            Send Message
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-900 border-t border-indigo-900 py-8 text-center text-indigo-400 text-sm select-none" style="text-shadow: 0 0 6px rgba(139,92,246,0.5);">
+    &copy; 2024 Micro Information Technology Services (MITS). All rights reserved.
+  </footer>
+
+  <!-- Mobile menu toggle script -->
+  <script>
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuButton.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', !isHidden);
+    });
+
+    // Keyboard accessible scroll from hero arrow
+    const scrollArrow = document.querySelector('#hero a[role="button"]');
+    scrollArrow.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        document.getElementById('universities').scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+
+</body>
+</html>
+
